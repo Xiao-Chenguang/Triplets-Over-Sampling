@@ -1,5 +1,5 @@
 imbalanced_learn==0.12.0
 numpy>=1.21.0
 scikit_learn==1.2.2
-scipy==1.7.3
+scipy>=1.7
 setuptools==61.2.0
