@@ -2,7 +2,7 @@ import numbers
 
 import numpy as np
 from imblearn.over_sampling.base import BaseOverSampler
-from imblearn.utils._param_validation import HasMethods, Interval
+from imblearn.utils._param_validation import Interval
 from numpy.linalg import norm
 from math import ceil
 from scipy import sparse
@@ -15,7 +15,6 @@ class TOS(BaseOverSampler):
         **BaseOverSampler._parameter_constraints,
         "k_neighbors": [
             Interval(numbers.Integral, 1, None, closed="left"),
-            HasMethods(["kneighbors", "kneighbors_graph"]),
             None,
         ],
         "len_limit": ["boolean"],
