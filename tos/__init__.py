@@ -96,12 +96,15 @@ class TOS(BaseOverSampler):
         The rule for the generation is:
 
         .. math::
-           \mathbf{s_{s}} = \mathbf{s_{i}} + \mathcal{u}(0, 1) \times
-           (\mathbf{s_{i}} - \mathbf{s_{nn}}) \,
+            \mathbf{s_{s}} = \mathbf{s_{i}} + \mathcal{u}(0, 1) \times
+            \min(\frac{\mathbf{s_{i}} - \mathbf{s_{n0}}}{\mathbf{s_{n0}} -
+            \mathbf{s_{nn}}}, 1) \times (\mathbf{s_{nn}}- \mathbf{s_{n0}}) \,
 
         where \mathbf{s_{s}} is the new synthetic samples, \mathbf{s_{i}} is
-        the current sample, \mathbf{s_{nn}} is a randomly selected neighbors of
-        \mathbf{s_{i}} and \mathcal{u}(0, 1) is a random number between [0, 1).
+        the current sample, \mathbf{s_{n0}} is a nearest neighbors of
+        \mathbf{s_{i}}, \mathbf{s_{nn}} is a randomly selected neighbors of
+        \mathbf{s_{i}} other \mathbf{s_{n0}}, than and \mathcal{u}(0, 1) is
+        a random number between [0, 1).
 
         Parameters
         ----------
