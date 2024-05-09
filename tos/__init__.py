@@ -16,6 +16,7 @@ class TOS(BaseOverSampler):
         "k_neighbors": [
             Interval(numbers.Integral, 1, None, closed="left"),
             HasMethods(["kneighbors", "kneighbors_graph"]),
+            None,
         ],
         "len_limit": ["boolean"],
     }
