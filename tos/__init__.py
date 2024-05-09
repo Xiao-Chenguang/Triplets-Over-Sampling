@@ -4,7 +4,7 @@ import numpy as np
 from imblearn.over_sampling.base import BaseOverSampler
 from imblearn.utils._param_validation import HasMethods, Interval
 from numpy.linalg import norm
-from numpy import ceil
+from math import ceil
 from scipy import sparse
 from sklearn.neighbors import NearestNeighbors
 from sklearn.utils import _safe_indexing, check_random_state
